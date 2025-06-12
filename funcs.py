@@ -120,7 +120,7 @@ def show_image(seleccion):
 
 def show_heatmap_page():
     """Página de Streamlit: Mapa de calor de avistamientos"""
-    st.title("🐈 Avistamientos - Mapa de calor")
+    st.title("🐈🔥 Avistamientos - Mapa de calor")
     
     coords_df = load_df()
 
@@ -191,7 +191,7 @@ def alpha2_to_alpha3(code):
 
 def show_choropleth_page():
     """Página de Streamlit: Mapa coroplético mundial por especie y país"""
-    st.title("🐈 Avistamientos - Mapa coroplético por especie y país")
+    st.title("🗺 Avistamientos - Mapa coroplético por especie y país")
     
     coords_df = load_df()
     coords_df["scientificName"] = coords_df["scientificName"].fillna(coords_df["scientificName"])
@@ -271,7 +271,7 @@ def show_choropleth_page():
             st.altair_chart(chart, use_container_width=True)
 
 def show_charts_page():
-    st.title("🐈 Gráficas – Avistamientos por época del año")
+    st.title("📅 Gráficas – Avistamientos por época del año")
     
     # 1) Umbral y carga unificada de especies
     min_occ = st.sidebar.number_input("Mínimo nº de avistamientos:", 1, 2000, 1000)
@@ -411,7 +411,7 @@ def show_charts_page():
 
     
 def show_charts_2_page():
-    st.title("🐈 Gráficas – Avistamientos por época del año")
+    st.title("📅 Gráficas – Avistamientos por tiempo")
     
     # 1) Umbral y carga unificada de especies
     min_occ = st.sidebar.number_input("Mínimo nº de avistamientos:", 1, 2000, 1000)
@@ -524,7 +524,7 @@ def show_charts_2_page():
 import numpy as np
 
 def show_combined_corr_page():
-    st.title("🐈 Comparativa de correlaciones entre especies")
+    st.title("📊 Comparativa de correlaciones entre especies")
 
     # 1) Parámetros y carga
     min_occ = st.sidebar.number_input("Mínimo nº de avistamientos:", 1, 2000, 1000)
@@ -686,7 +686,7 @@ def show_combined_corr_page():
 
 
 def show_habitat_boxplot_page():
-    st.title("🐈 Boxplot de avistamientos por hábitat")
+    st.title("🏞️ Boxplot de avistamientos por hábitat")
     
     # 1) Parámetros
     min_occ = st.sidebar.number_input(
@@ -777,7 +777,7 @@ def show_about():
     """
     st.title("ℹ️ Acerca de esta aplicación")
     st.markdown(
-        "Esta aplicación interactiva muestra avistamientos de especies de gatos "
+        "Esta aplicación interactiva muestra avistamientos de especies de felinos "
         "a nivel global. Permite explorar mapas de calor, coropletas, gráficos "
         "temporales y boxplots de distribución por hábitat."
     )
@@ -798,7 +798,7 @@ def show_about():
     st.header("Autor y repositorio")
     st.markdown(
         "- **Autor:** Adrián Camacho García"
-        "- **Repositorio:** [GitHub](https://github.com/tu_usuario/tu_repositorio)"
+        "- **Repositorio:** [GitHub](https://github.com/AalguienN/Visualizaci-nEspeciesFelidae)"
     )
 
     st.caption("Última actualización: 2025")
