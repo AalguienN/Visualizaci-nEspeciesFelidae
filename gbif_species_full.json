@@ -1,0 +1,475 @@
+{
+  "9703": {
+    "key": 9703,
+    "nubKey": 9703,
+    "nameKey": 4416245,
+    "taxonID": "gbif:9703",
+    "sourceTaxonKey": 175958223,
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "order": "Carnivora",
+    "family": "Felidae",
+    "kingdomKey": 1,
+    "phylumKey": 44,
+    "classKey": 359,
+    "orderKey": 732,
+    "familyKey": 9703,
+    "datasetKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+    "constituentKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
+    "parentKey": 732,
+    "parent": "Carnivora",
+    "scientificName": "Felidae",
+    "canonicalName": "Felidae",
+    "vernacularName": "cat",
+    "authorship": "",
+    "nameType": "SCIENTIFIC",
+    "rank": "FAMILY",
+    "origin": "SOURCE",
+    "taxonomicStatus": "ACCEPTED",
+    "nomenclaturalStatus": [],
+    "remarks": "",
+    "publishedIn": "Mém. Soc. Imp. Nat. Moscow vol.5 p.372",
+    "numDescendants": 596,
+    "lastCrawled": "2023-08-22T23:20:59.545+00:00",
+    "lastInterpreted": "2023-08-22T22:19:08.271+00:00",
+    "issues": [],
+    "class": "Mammalia",
+    "synonyms": [],
+    "vernacularNames": [
+      {
+        "taxonKey": 9703,
+        "vernacularName": "Cat",
+        "language": "eng",
+        "country": "US",
+        "source": "Checklist of Vermont Species",
+        "sourceTaxonKey": 205802352
+      },
+      {
+        "taxonKey": 9703,
+        "vernacularName": "Cat",
+        "language": "eng",
+        "country": "US",
+        "source": "Martha's Vineyard species checklist",
+        "sourceTaxonKey": 206229760
+      },
+      {
+        "taxonKey": 9703,
+        "vernacularName": "Cats",
+        "language": "eng",
+        "source": "Checklist of Vermont Species",
+        "sourceTaxonKey": 205802352
+      },
+      {
+        "taxonKey": 9703,
+        "vernacularName": "Cats",
+        "language": "eng",
+        "source": "Martha's Vineyard species checklist",
+        "sourceTaxonKey": 206229760
+      },
+      {
+        "taxonKey": 9703,
+        "vernacularName": "Chats",
+        "language": "fra",
+        "country": "FR",
+        "area": "fra",
+        "source": "TAXREF",
+        "sourceTaxonKey": 222472763
+      },
+      {
+        "taxonKey": 9703,
+        "vernacularName": "Felines",
+        "language": "eng",
+        "country": "GB",
+        "source": "Checklist of Vermont Species",
+        "sourceTaxonKey": 205802352
+      },
+      {
+        "taxonKey": 9703,
+        "vernacularName": "Felines",
+        "language": "eng",
+        "country": "GB",
+        "source": "Martha's Vineyard species checklist",
+        "sourceTaxonKey": 206229760
+      },
+      {
+        "taxonKey": 9703,
+        "vernacularName": "Katte",
+        "language": "dan",
+        "country": "DK",
+        "source": "National Checklist of all species occurring in Denmark",
+        "sourceTaxonKey": 168516056
+      },
+      {
+        "taxonKey": 9703,
+        "vernacularName": "cat",
+        "language": "eng",
+        "source": "The Paleobiology Database",
+        "sourceTaxonKey": 121507697
+      },
+      {
+        "taxonKey": 9703,
+        "vernacularName": "cats",
+        "language": "eng",
+        "source": "Phthiraptera.myspecies.info",
+        "sourceTaxonKey": 116892501
+      },
+      {
+        "taxonKey": 9703,
+        "vernacularName": "cats",
+        "language": "eng",
+        "source": "Yanayacu Natural History Research Group",
+        "sourceTaxonKey": 119231588
+      },
+      {
+        "taxonKey": 9703,
+        "vernacularName": "cats",
+        "language": "eng",
+        "source": "Integrated Taxonomic Information System (ITIS)",
+        "sourceTaxonKey": 102115889
+      },
+      {
+        "taxonKey": 9703,
+        "vernacularName": "cats",
+        "language": "eng",
+        "source": "Catalogue of Life",
+        "sourceTaxonKey": 219028068
+      },
+      {
+        "taxonKey": 9703,
+        "vernacularName": "felines",
+        "language": "eng",
+        "country": "GB",
+        "area": "eng",
+        "source": "TAXREF",
+        "sourceTaxonKey": 222472763
+      },
+      {
+        "taxonKey": 9703,
+        "vernacularName": "kissaeläimet",
+        "language": "fin",
+        "country": "FI",
+        "source": "The FinBIF checklist of Finnish species",
+        "sourceTaxonKey": 257958965
+      },
+      {
+        "taxonKey": 9703,
+        "vernacularName": "Котові",
+        "language": "ukr",
+        "source": "Checklist of mammals of the Slobozhanskyi National Nature Park",
+        "sourceTaxonKey": 162653730
+      },
+      {
+        "taxonKey": 9703,
+        "vernacularName": "kattdjur",
+        "language": "swe",
+        "country": "SE",
+        "source": "Dyntaxa. Svensk taxonomisk databas",
+        "sourceTaxonKey": 159940181,
+        "preferred": true
+      },
+      {
+        "taxonKey": 9703,
+        "vernacularName": "kattefamilien",
+        "language": "nob",
+        "country": "NO",
+        "sourceTaxonKey": 168002598,
+        "preferred": true
+      },
+      {
+        "taxonKey": 9703,
+        "vernacularName": "kattefamilien",
+        "language": "nno",
+        "country": "NO",
+        "sourceTaxonKey": 168002598,
+        "preferred": true
+      }
+    ],
+    "descriptions": [
+      {
+        "key": 308930403,
+        "taxonKey": 9703,
+        "type": "Felidae",
+        "language": "eng",
+        "description": "<html xmlns:mods=\"http://www.loc.gov/mods/v3\">",
+        "source": "Checklist of helminth parasites of threatened vertebrate species from Brazil",
+        "sourceTaxonKey": 119619035
+      },
+      {
+        "key": 309105761,
+        "taxonKey": 9703,
+        "type": "description",
+        "language": "eng",
+        "description": "Ancylostoma braziliense Dirofilaria sp. Oligacanthorhynchus pardalis Oncicola campanulata Oncicola chibigouzouensis Oncicola oncicola Oncicola sp. Physaloptera sp. Prosthenorchis sp. (NHR) Toxascaris leonina Toxocara canis Toxocara mistax (NHR) Toxocara sp. Leopardus tigrinus Trichuris sp. Leopardus wiedii Ancylostoma pluridentatum (NGR) Diphyllobothrium gracilis Diphyllobothrium latum Dirofilaria striata Lauroia heterospiculata Oligacanthorhynchus decrescens Oncicola macrurae Oncicola oncicola (NHR) Physaloptera digitata Physaloptera sp. (NHR) Spirometra decipiens (NHR) Leopardus (Oncifelis) geoffroyi Diphyllobothrium gracilis Diphyllobothrium latum Echinococcus oligarthrus Gnathostoma americanum Oligacanthorhynchus pardalis Oncicola campanulata Taenia macrocystis Taenia omissa Taenia pisiformis Panthera onca Ancylostoma caninum (NHR) Ancylostoma pluridentatum (NGR) Diphyllobothrium sp. Diphyllobothrium trinitatis (NHR) Oligacanthorhynchus pardalis Oncicola campanulata Oncicola oncicola Physaloptera anomala Spirometra decipiens (NHR) Toxascaris leonina Toxocara mistax Puma concolor Ancylostoma braziliense Ancylostoma pluridentatum (NGR) Capillaria sp. (NHR) Dirofilaria striata Echinococcus oligarthrus Mammomonogamus dispar Mammomonogamus sp. (NHR) Oligacanthorhynchus pardalis Oncicola campanulata Oncicola magalhaesi Physaloptera digitata Physaloptera terdentata Spirometra decipiens Taenia omissa Taenia taeniaeformis Toxascaris leonina Toxocara canis Toxocara mistax Puma (Herpailurus) yagouaroundi Aelurostrongylus abstrusus Ancylostoma bidens Ancylostoma braziliense (NHR) Ancylostoma caninum (NHR) Diphyllobothrium gracilis Echinococcus oligarthrus Molineus felineus Oncicola oncicola Oncicola paracampanulata Opisthorchis sp. (NRH) Platynosomum illiciens Taenia macrocystis Taenia omissa Toxascaris leonina (NHR) Toxocara mistax",
+        "source": "Checklist of helminth parasites in wild carnivore mammals from Brazil",
+        "sourceTaxonKey": 119357124
+      },
+      {
+        "key": 309405800,
+        "taxonKey": 9703,
+        "type": "child_taxa",
+        "language": "eng",
+        "description": "Genera: 14 genera with 40 species in 2 subfamilies: Subfamily Felinae Fischer de Waldheim 1817 Genus Acinonyx Brookes 1828 (1 species with 6 subspecies) Genus Caracal Gray 1843 (1 species with 8 subspecies) Genus Catopuma Severtzov 1858 (2 species with 3 subspecies) Genus Felis Linnaeus 1758 (7 species with 43 subspecies) Genus Leopardus Gray 1842 (9 species with 41 subspecies) Genus Leptailurus Severtzov 1858 (1 species with 18 subspecies) Genus Lynx Kerr 1792 (4 species with 20 subspecies) Genus Pardofelis Severtzov 1858 (1 species with 2 subspecies) Genus Prionailurus Severtzov 1858 (5 species with 13 subspecies) Genus Profelis Severtzov 1858 (1 species with 2 subspecies) Genus Puma Jardine 1834 (2 species with 14 subspecies) Subfamily Pantherinae Pocock 1917 Genus Neofelis Gray 1867 (1 species with 4 subspecies) Genus Panthera Oken 1816 (4 species with 36 subspecies) Genus Uncia Gray 1854 (1 species)",
+        "source": "Order Carnivora",
+        "sourceTaxonKey": 231547971
+      },
+      {
+        "key": 309405801,
+        "taxonKey": 9703,
+        "type": "discussion",
+        "language": "eng",
+        "description": "Discussion: Revised by Pocock (1917 a, b, 1951), Weigel (1961), de Beaumont (1964), Hemmer (1978), Král and Zima (1980), Kratochvíl (1982 c), Groves (1982 a), Collier and O'Brien (1985), Salles (1992), Johnson and O'Brien (1997), McKenna and Bell (1997), Bininda-Emonds et al. (1999), and Mattern and McLennan (2000). Some (Honacki et al., 1982; McKenna and Bell, 1997; Van Gelder, 1977 b) have followed Simpson (1945) and placed the majority of taxa in Felis, except for the large cats (i. e., Panthera and Acinonyx); however, this is not well supported by primary systematic studies and only poorly represents relationships below the family level. Most studies agree on the clear separation of the \" big cats \" (i. e., Panthera, Neofelis, Uncia) from the remainder. However, within the remaining group, there does not appear to be a clear consensus. Even the cheetah’s (Acinonyx) traditional position has been called into question (Bininda-Emonds et al., 1999; Mattern and McLennan, 2000). For these reasons, only two subfamilies of cats are recognized, and taxa are listed alphabetically within each subfamily. Synonyms allocated according to McKenna and Bell (1997) and Kitchener (pers. comm.). Species distributions were suplemented by Kristin Nowell, IUCN / SSC Cat Specialist Group (pers. comm.). For an excellent review of the biology of the felids, see Sunquist and Sunquist (2002).",
+        "source": "Order Carnivora",
+        "sourceTaxonKey": 231547971
+      },
+      {
+        "key": 309541421,
+        "taxonKey": 9703,
+        "type": "description",
+        "language": "fra",
+        "description": "Styriofelis turnauensis Hoernes, 1882: P 4 d. (Coll. DM).",
+        "source": "Nouvelles données géologiques et biostratigraphiques du gisement paléontologique à vertébrés de Mauvières, à Marcilly-sur-Maulne (Miocène inférieur et moyen; Indre-et-Loire, France)",
+        "sourceTaxonKey": 213153463
+      },
+      {
+        "key": 309632796,
+        "taxonKey": 9703,
+        "type": "discussion",
+        "language": "eng",
+        "description": "COMMENTS: Revised by Pocock (1917, 1951), Weigel (1961), Hemmer (1978), Kräl and Zima (1980), Kratochvfl (1982 c), Groves (1982 a), and Collier and O'Brien (1985). Some (Honacki et al., 1982; Van Gelder, 1977 b) have followed Simpson (1945) and placed the majority of taxa in Felis, except for the large cats (Panthera and Acinonyx); however, this is not well supported by primary systematic studies and only poorly represents relationships below the family level. Although taxonomic disagreements appear at first to be considerable, most revolve around the recognition of categories at the generic versus the subgeneric level and interpretations of degrees of similarity.",
+        "source": "Order Carnivora",
+        "sourceTaxonKey": 205134922
+      },
+      {
+        "key": 309658151,
+        "taxonKey": 9703,
+        "type": "conservation",
+        "language": "eng",
+        "description": "PROTECTED STATUS: CITES - Appendix II except Felis catus.",
+        "source": "Order Carnivora",
+        "sourceTaxonKey": 205120819
+      },
+      {
+        "key": 309658152,
+        "taxonKey": 9703,
+        "type": "discussion",
+        "language": "eng",
+        "description": "COMMENT: The generic classification of this family is unstable; see Guggisberg, 1975, The Wild Cats of the World, 328 pp. Due to inconsistencies of the dates of publication for Schreber's names in the literature, we follow Sherborn, 1892, Proc. Zool. Soc. Lond., 1891: 587 - 592 (NAN).",
+        "source": "Order Carnivora",
+        "sourceTaxonKey": 205120819
+      },
+      {
+        "key": 309777326,
+        "taxonKey": 9703,
+        "type": "description",
+        "language": "eng",
+        "description": "• 14 genera, 37 species, at least 228 extant taxa. • 1 species Critically Endangered, 6 species Endangered, 9 species Vulnerable; 5 subspecies Extinct since 1600.",
+        "source": "Felidae",
+        "sourceTaxonKey": 196366963
+      },
+      {
+        "key": 309777327,
+        "taxonKey": 9703,
+        "type": "diagnosis",
+        "language": "eng",
+        "description": "• Small to quite large mammals with rounded head and ratherflat face, facial whiskers, and large eyes and ears; sleek and streamlined body with muscular legs. • 48.639 9 cm. • Holarctic, Neotropical, Afrotropical, and Oriental regions. • From desert through forest to mountain areas, from cold temperate zone to tropics.",
+        "source": "Felidae",
+        "sourceTaxonKey": 196366963
+      },
+      {
+        "key": 310297161,
+        "taxonKey": 9703,
+        "type": "Felidae Fischer 1817",
+        "language": "eng",
+        "description": "<html xmlns:mods=\"http://www.loc.gov/mods/v3\">",
+        "source": "Mammals of Korea: a review of their taxonomy, distribution and conservation status",
+        "sourceTaxonKey": 180327639
+      },
+      {
+        "key": 310297162,
+        "taxonKey": 9703,
+        "type": "discussion",
+        "language": "eng",
+        "description": "The Family Felidae in Korea has four species representatives grouped into three genera. Except for the small-sized Prionailurus bengalensis, the other three species of medium or large-sized cats are considered extirpated in South Korea, and their presence in North Korea remains uncertain. Allen and Andrews (1913) reported the snow leopard (Uncia uncia) in Korea, but no further record has confirmed that the species exists in Korea. Other than the report by Allen and Andrews (1913), no other record placed the snow leopard in Korea, Manchuria, or Siberia, Allen and Andrews (1913) reported the species was frequently caught by natives, but the natives may have confused the tiger with leopards. Therefore, the record of snow leopard by Allen and Andrews (1913) in Korea is regarded as an erroneous identification. We did not include the snow leopard in our list because over 100 - years have elapsed since the supposedly report of the species in Korea.",
+        "source": "Mammals of Korea: a review of their taxonomy, distribution and conservation status",
+        "sourceTaxonKey": 154499186
+      }
+    ],
+    "media": [
+      {
+        "type": "StillImage",
+        "format": "image/png",
+        "references": "https://doi.org/10.5281/zenodo.6376901",
+        "title": "• 48.639 9 cm.",
+        "description": "• 48.639 9 cm.",
+        "source": "Felidae",
+        "audience": "biologists",
+        "created": "2009-01-31T00:00:00.000+00:00",
+        "creator": "Don E. Wilson;Russell A. Mittermeier",
+        "publisher": "Zenodo",
+        "taxonKey": 9703,
+        "sourceTaxonKey": 196366963,
+        "identifier": "https://zenodo.org/record/6376901/files/figure.png"
+      },
+      {
+        "type": "StillImage",
+        "format": "image/png",
+        "references": "https://doi.org/10.5281/zenodo.6376903",
+        "title": "• Holarctic, Neotropical, Afrotropical, and Oriental regions.",
+        "description": "• Holarctic, Neotropical, Afrotropical, and Oriental regions.",
+        "source": "Felidae",
+        "audience": "biologists",
+        "created": "2009-01-31T00:00:00.000+00:00",
+        "creator": "Don E. Wilson;Russell A. Mittermeier",
+        "publisher": "Zenodo",
+        "taxonKey": 9703,
+        "sourceTaxonKey": 196366963,
+        "identifier": "https://zenodo.org/record/6376903/files/figure.png"
+      }
+    ],
+    "distributions": [
+      {
+        "taxonKey": 9703,
+        "country": "DK",
+        "threatStatus": "NOT_EVALUATED",
+        "source": "National Checklist of all species occurring in Denmark",
+        "sourceTaxonKey": 168516056
+      },
+      {
+        "taxonKey": 9703,
+        "locationId": "ISO:NO",
+        "country": "NO",
+        "sourceTaxonKey": 168002598
+      },
+      {
+        "taxonKey": 9703,
+        "country": "SE",
+        "source": "Dyntaxa. Svensk taxonomisk databas",
+        "sourceTaxonKey": 159940181
+      },
+      {
+        "taxonKey": 9703,
+        "locationId": "ISO3166-2:US-VT",
+        "locality": "Vermont-US",
+        "country": "US",
+        "source": "Checklist of Vermont Species",
+        "sourceTaxonKey": 205802352
+      }
+    ],
+    "traits": [],
+    "speciesProfile": null
+  },
+  "2163721": {
+    "key": 2163721,
+    "nubKey": 2163721,
+    "nameKey": 5369657,
+    "taxonID": "gbif:2163721",
+    "sourceTaxonKey": 174677298,
+    "kingdom": "Animalia",
+    "phylum": "Arthropoda",
+    "order": "Araneae",
+    "family": "Palpimanidae",
+    "genus": "Hybosida",
+    "species": "Hybosida dauban",
+    "kingdomKey": 1,
+    "phylumKey": 54,
+    "classKey": 367,
+    "orderKey": 1496,
+    "familyKey": 9568,
+    "genusKey": 2163719,
+    "speciesKey": 2163721,
+    "datasetKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+    "constituentKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
+    "parentKey": 2163719,
+    "parent": "Hybosida",
+    "scientificName": "Hybosida dauban Platnick, 1979",
+    "canonicalName": "Hybosida dauban",
+    "authorship": "Platnick, 1979",
+    "nameType": "SCIENTIFIC",
+    "rank": "SPECIES",
+    "origin": "SOURCE",
+    "taxonomicStatus": "ACCEPTED",
+    "nomenclaturalStatus": [],
+    "remarks": "",
+    "publishedIn": "Platnick, N. I. (1979). Contributions à l’étude de la faune terrestre des îles granitiques de l’archipel des Séchelles (Mission P.L.G. Benoit - J.J. Van Mol 1972). Araneae: Palpimanidae. Revue Zoologique Africaine 93: 461-, 466.",
+    "numDescendants": 0,
+    "lastCrawled": "2023-08-22T23:20:59.545+00:00",
+    "lastInterpreted": "2023-08-22T22:48:35.775+00:00",
+    "issues": [],
+    "class": "Arachnida",
+    "synonyms": [],
+    "vernacularNames": [],
+    "descriptions": [],
+    "media": [],
+    "distributions": [
+      {
+        "taxonKey": 2163721,
+        "locality": "Seychelles",
+        "source": "Catalogue of Life",
+        "sourceTaxonKey": 174677298
+      },
+      {
+        "taxonKey": 2163721,
+        "locality": "Global",
+        "status": "PRESENT",
+        "threatStatus": "CRITICALLY_ENDANGERED",
+        "source": "The IUCN Red List of Threatened Species",
+        "sourceTaxonKey": 176599037
+      }
+    ],
+    "traits": [],
+    "speciesProfile": null
+  },
+  "1234567": {
+    "key": 1234567,
+    "nubKey": 1234567,
+    "nameKey": 6939769,
+    "taxonID": "gbif:1234567",
+    "sourceTaxonKey": 184055817,
+    "kingdom": "Animalia",
+    "phylum": "Arthropoda",
+    "order": "Coleoptera",
+    "family": "Curculionidae",
+    "genus": "Metapocyrtus",
+    "species": "Metapocyrtus bambalio",
+    "kingdomKey": 1,
+    "phylumKey": 54,
+    "classKey": 216,
+    "orderKey": 1470,
+    "familyKey": 4239,
+    "genusKey": 8995227,
+    "speciesKey": 1234567,
+    "datasetKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+    "constituentKey": "7ddf754f-d193-4cc9-b351-99906754a03b",
+    "parentKey": 8995227,
+    "parent": "Metapocyrtus",
+    "scientificName": "Metapocyrtus bambalio Heller, 1912",
+    "canonicalName": "Metapocyrtus bambalio",
+    "authorship": "Heller, 1912",
+    "nameType": "SCIENTIFIC",
+    "rank": "SPECIES",
+    "origin": "SOURCE",
+    "taxonomicStatus": "ACCEPTED",
+    "nomenclaturalStatus": [],
+    "remarks": "",
+    "publishedIn": "Heller, K.M. (1912) Philippinische Rüsselkäfer. Philippine Journal of Science, Section D, 7(5): 295–346 [28–XII–1912], 7(5), 295–346.",
+    "numDescendants": 0,
+    "lastCrawled": "2023-08-22T23:20:59.545+00:00",
+    "lastInterpreted": "2023-08-22T22:37:09.939+00:00",
+    "issues": [],
+    "class": "Insecta",
+    "synonyms": [],
+    "vernacularNames": [],
+    "descriptions": [],
+    "media": [],
+    "distributions": [
+      {
+        "taxonKey": 1234567,
+        "country": "PH",
+        "source": "Catalogue of Life",
+        "sourceTaxonKey": 175631648
+      }
+    ],
+    "traits": [],
+    "speciesProfile": null
+  }
+}
