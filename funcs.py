@@ -18,7 +18,7 @@ import plotly.graph_objects as go
 @st.cache_data
 def load_occurrence():
     return pd.read_csv(
-        r".\gatos_light.csv",
+        r"./gatos_light.csv",
         sep="\t",
         usecols=["gbifID", "scientificName", "vernacularName"],
         dtype=str
@@ -27,7 +27,7 @@ def load_occurrence():
 @st.cache_data
 def load_multimedia():
     return pd.read_csv(
-        r".\multimedia.txt",
+        r"./multimedia.txt",
         sep="\t",
         usecols=["gbifID", "identifier"],
         dtype=str
@@ -36,7 +36,7 @@ def load_multimedia():
 @st.cache_data
 def load_df():
     return pd.read_csv(
-        r".\gatos_light.csv",
+        r"./gatos_light.csv",
         sep="\t",
         usecols=[
             "countryCode","scientificName","vernacularName",
