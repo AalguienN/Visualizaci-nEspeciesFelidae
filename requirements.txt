@@ -1,0 +1,9 @@
+streamlit
+pandas
+folium
+streamlit-folium
+altair
+pycountry
+numpy
+networkx
+plotly

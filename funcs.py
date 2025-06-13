@@ -7,20 +7,16 @@ import json
 import altair as alt
 from folium.plugins import MarkerCluster
 from folium.plugins import FastMarkerCluster
+import pycountry
 
+import numpy as np
 
+import networkx as nx
+import plotly.graph_objects as go
 
-# Para GeoJSON mundial de países:
-# Descárgalo de alguno de estos repositorios:
-# - https://github.com/datasets/geo-countries/blob/master/data/countries.geojson
-# - https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json
-# Guarda el archivo como 'world_countries.geojson' en tu directorio de trabajo
-
-# ---------- Data loading functions ----------
 
 @st.cache_data
 def load_occurrence():
-    """Carga gbifID, scientificName y vernacularName"""
     return pd.read_csv(
         r".\gatos_light.csv",
         sep="\t",
@@ -30,7 +26,6 @@ def load_occurrence():
 
 @st.cache_data
 def load_multimedia():
-    """Carga gbifID e identifier para multimedia"""
     return pd.read_csv(
         r".\multimedia.txt",
         sep="\t",
@@ -55,7 +50,6 @@ def load_df():
 
 @st.cache_data
 def get_species(df, min_occ):
-    """Devuelve lista de nombres comunes con al menos min_occ registros georreferenciados"""
     df = df.dropna(subset=["decimalLatitude", "decimalLongitude"]).copy()
     df["scientificName"] = df["scientificName"].fillna(df["scientificName"])
     counts = df["scientificName"].value_counts()
@@ -98,7 +92,6 @@ def filter_dataframe(
 
 @st.cache_data
 def get_img_url(mult, vernac):
-    """Obtiene la primera URL de imagen asociada al nombre común"""
     occ = load_occurrence()
     merged = mult.merge(
         occ[["gbifID", "scientificName", "vernacularName"]],
@@ -119,7 +112,6 @@ def show_image(seleccion):
         st.info("No hay imagen disponible para esta especie.")
 
 def show_heatmap_page():
-    """Página de Streamlit: Mapa de calor de avistamientos"""
     st.title("🐈🔥 Avistamientos - Mapa de calor")
     
     coords_df = load_df()
@@ -181,7 +173,6 @@ def show_heatmap_page():
     else:
         st.warning("No se encontraron registros georreferenciados para esta especie.")
 
-import pycountry
 
 def alpha2_to_alpha3(code):
     try:
@@ -190,7 +181,6 @@ def alpha2_to_alpha3(code):
         return None
 
 def show_choropleth_page():
-    """Página de Streamlit: Mapa coroplético mundial por especie y país"""
     st.title("🗺 Avistamientos - Mapa coroplético por especie y país")
     
     coords_df = load_df()
@@ -273,13 +263,11 @@ def show_choropleth_page():
 def show_charts_page():
     st.title("📅 Gráficas – Avistamientos por época del año")
     
-    # 1) Umbral y carga unificada de especies
     min_occ = st.sidebar.number_input("Mínimo nº de avistamientos:", 1, 2000, 1000)
     df_all = load_df()
     especies = get_species(df_all, min_occ)
     seleccion = st.selectbox("Selecciona una especie (nombre común):", especies)
     
-    # 2) Filtrado por especie y limpieza de month/year
     df_sel = df_all[df_all["scientificName"].fillna(df_all["scientificName"]) == seleccion]
     df_sel = df_sel.dropna(subset=["month", "year"])
     df_sel["month"] = df_sel["month"].astype(int)
@@ -294,7 +282,6 @@ def show_charts_page():
         
     
     with col_2:
-        # 3) Avistamientos por mes (gráfico de línea)
         monthly = (
             df_sel.groupby("month")
                 .size()
@@ -317,7 +304,6 @@ def show_charts_page():
         min_m, max_m = meses_disponibles[0], meses_disponibles[-1]
 
 
-        # 4) Tendencia anual (línea)
         yearly = (
             df_sel.groupby("year")
                 .size()
@@ -336,7 +322,6 @@ def show_charts_page():
     with col_3:
         show_image(seleccion)
 
-        # 5) Heatmap mes vs año
         pivot = (
             df_sel.groupby(["year","month"])
                 .size()
@@ -391,15 +376,11 @@ def show_charts_page():
         m = folium.Map(location=centro, zoom_start=2, tiles="CartoDB dark_matter")
         cluster = MarkerCluster(
             singleMarkerMode=True,   # usa el icono de clúster (círculo) siempre, incluso para 1 punto
-            # opcional: si quisieras personalizar el HTML o el tamaño, podrías añadir aquí
-            # icon_create_function=... 
         )
 
-        # añade los marcadores individuales al clúster
         for lat, lon in coors:
             folium.Marker(location=[lat, lon]).add_to(cluster)
 
-        # añade el clúster al mapa
         cluster.add_to(m)
 
         st.markdown(f"**Especie:** {seleccion} — “{start_month}–{end_month}” ({len(coors)} puntos)")
@@ -429,18 +410,14 @@ def show_charts_2_page():
         .fillna(0)
     )
 
-    # 1) Calcula la matriz de correlación
     corr_h = hab_pivot.corr()
 
-    # 2) Renombra los ejes (index y columns) para que no colisionen
     corr_h.index.name   = "especie1"
     corr_h.columns.name = "especie2"
 
-    # 3) Ahora el stack + reset_index funciona sin error
     corr_h_long = corr_h.stack().reset_index(name="ρ")
 
 
-    # 3) Heatmap
     heat_h = (
         alt.Chart(corr_h_long)
            .mark_rect()
@@ -456,7 +433,6 @@ def show_charts_2_page():
                height=1000    # alto fijo, igual al ancho
            )
     )
-    # Quita use_container_width para que respete width/height
     st.altair_chart(heat_h, use_container_width=False)
 
     #-------------------------------------
@@ -465,20 +441,16 @@ def show_charts_2_page():
     n_lon_bins = st.sidebar.slider("Número de bins de longitud:", 5, 50, 20)
 
     df = df_all.copy()
-    # Asegúrate de convertir a float y eliminar nulos
     df = df.dropna(subset=["decimalLatitude","decimalLongitude"])
     df["decimalLatitude"]  = df["decimalLatitude"].astype(float)
     df["decimalLongitude"] = df["decimalLongitude"].astype(float)
 
-    # 1) Crear bins de latitud y longitud
     df["lat_bin"] = pd.cut(df["decimalLatitude"], bins=n_lat_bins)
     df["lon_bin"] = pd.cut(df["decimalLongitude"], bins=n_lon_bins)
 
-    # 2) Elegir si quieres analizar latitud o longitud
     axis = st.sidebar.radio("¿Correlacionar sobre…", ["latitud", "longitud"])
     bin_col = "lat_bin" if axis=="latitud" else "lon_bin"
 
-    # 3) Pivot bin × especie
     pivot = (
         df[df["scientificName"].isin(especies)]
         .groupby([bin_col, "scientificName"])
@@ -488,20 +460,15 @@ def show_charts_2_page():
         .fillna(0)
     )
 
-    # 4) Matriz de correlación
     corr = pivot.corr()
     corr.index.name   = "especie1"
     corr.columns.name = "especie2"
 
-    # 5) Enmascara mitad superior (opcional)
-    import numpy as np
     mask = np.triu(np.ones(corr.shape, dtype=bool), k=1)
     corr = corr.where(mask)
 
-    # 6) Aplana para Altair
     corr_long = corr.stack(dropna=True).reset_index(name="ρ")
 
-    # 7) Dibuja heatmap
     heat = (
         alt.Chart(corr_long)
         .mark_rect()
@@ -521,17 +488,14 @@ def show_charts_2_page():
 
 
 
-import numpy as np
 
 def show_combined_corr_page():
     st.title("📊 Comparativa de correlaciones entre especies")
 
-    # 1) Parámetros y carga
     min_occ = st.sidebar.number_input("Mínimo nº de avistamientos:", 1, 2000, 1000)
     df_all = load_df()
     especies = get_species(df_all, min_occ)
 
-    # 2) Función helper para generar corr_long de cualquier pivot
     def compute_corr_long(pivot_df):
         corr = pivot_df.corr()
         corr.index.name = "especie1"
@@ -541,7 +505,6 @@ def show_combined_corr_page():
         corr = corr.where(mask)
         return corr.stack(dropna=True).reset_index(name="ρ")
 
-    # ── a) Hábitat
     hab_pivot = (
         df_all[df_all["scientificName"].isin(especies) & df_all["habitat"].notna()]
         .groupby(["habitat","scientificName"]).size()
@@ -550,7 +513,6 @@ def show_combined_corr_page():
     corr_h = compute_corr_long(hab_pivot)
     corr_h["tipo"] = "hábitat"
 
-    # ── b) Latitud binned
     df = df_all.dropna(subset=["decimalLatitude","decimalLongitude"]).copy()
     df["decimalLatitude"] = df["decimalLatitude"].astype(float)
     df["lat_bin"] = pd.cut(df["decimalLatitude"], bins=20).astype(str)
@@ -562,7 +524,6 @@ def show_combined_corr_page():
     corr_lat = compute_corr_long(lat_pivot)
     corr_lat["tipo"] = "latitud"
 
-    # ── c) Longitud binned
     df["decimalLongitude"] = df["decimalLongitude"].astype(float)
     df["lon_bin"] = pd.cut(df["decimalLongitude"], bins=20).astype(str)
     lon_pivot = (
@@ -573,13 +534,10 @@ def show_combined_corr_page():
     corr_lon = compute_corr_long(lon_pivot)
     corr_lon["tipo"] = "longitud"
 
-    # 3) Unir los tres DataFrames
     corr_all = pd.concat([corr_h, corr_lat, corr_lon], ignore_index=True)
 
 
-    # 3.5) Top relaciones por correlación
     top_n = st.sidebar.number_input("Número de relaciones a mostrar:", 5, 50, 10)
-    # Ordenamos de mayor a menor ρ
     top_rel = (
         corr_all
         .sort_values("ρ", ascending=False)
@@ -589,8 +547,6 @@ def show_combined_corr_page():
     st.subheader(f"Top {top_n} correlaciones más altas")
     st.table(top_rel[["tipo","especie1","especie2","ρ"]])
 
-
-    # 4) Dibujo facetado
     heat = (
         alt.Chart(corr_all)
            .mark_rect()
@@ -607,28 +563,18 @@ def show_combined_corr_page():
     )
     st.altair_chart(heat, use_container_width=True)
 
-
-
-    import networkx as nx
-    import plotly.graph_objects as go
-
-    # 1) Elige un umbral mínimo de ρ
     threshold = st.sidebar.slider(
         "Umbral mínimo de correlación (ρ):", 0.0, 1.0, 0.5, step=0.05
     )
 
-    # 2) Filtra las relaciones por encima del umbral
     edges = corr_all[corr_all["ρ"] >= threshold]
 
-    # 3) Construye el grafo
     G = nx.Graph()
     for _, row in edges.iterrows():
         G.add_edge(row["especie1"], row["especie2"], weight=row["ρ"])
 
-    # 4) Calcula posiciones con spring layout
     pos = nx.spring_layout(G, seed=42)
 
-    # 5) Prepara las trazas de aristas
     edge_x, edge_y = [], []
     edge_width = []
     for u, v, d in G.edges(data=True):
@@ -646,7 +592,6 @@ def show_combined_corr_page():
         hoverinfo="none"
     )
 
-    # 6) Prepara la traza de nodos
     node_x, node_y, node_text = [], [], []
     for node in G.nodes():
         x, y = pos[node]
@@ -667,7 +612,6 @@ def show_combined_corr_page():
         )
     )
 
-    # 7) Monta la figura
     fig = go.Figure(
         data=[edge_trace, node_trace],
         layout=go.Layout(
@@ -680,7 +624,6 @@ def show_combined_corr_page():
         )
     )
 
-    # 8) Muestra en Streamlit
     st.plotly_chart(fig, use_container_width=True)
 
 
@@ -688,7 +631,6 @@ def show_combined_corr_page():
 def show_habitat_boxplot_page():
     st.title("🏞️ Boxplot de avistamientos por hábitat")
     
-    # 1) Parámetros
     min_occ = st.sidebar.number_input(
         "Mínimo nº de avistamientos por especie:", 
         1, 2000, 1000, step=1
@@ -698,19 +640,15 @@ def show_habitat_boxplot_page():
         1, 100, 10, step=1
     )
     
-    # 2) Carga y filtrado de especies con al menos min_occ registros
     df_all = load_df()
     especies = get_species(df_all, min_occ)
     df = df_all[
         df_all["scientificName"].fillna(df_all["scientificName"]).isin(especies)
     ].dropna(subset=["habitat"])
 
-    # df = df_all[df_all["habitat"] == "Savanna"]
 
-    # Excluir valores desconocidos
     df = df[df["habitat"].notna() & ~df["habitat"].isin(["unknown","[]","NO DISPONIBLE"])]
 
-    # 3) Selección de los hábitats con mayor número de especies distintas
     top_habitats = (
         df.groupby("habitat")["scientificName"]
           .nunique()
@@ -721,7 +659,6 @@ def show_habitat_boxplot_page():
     )
     df = df[df["habitat"].isin(top_habitats)]
     
-    # 4) Cómputo de conteos por (hábitat, especie)
     hab_counts = (
         df
         .groupby(["habitat","scientificName"])
@@ -729,7 +666,6 @@ def show_habitat_boxplot_page():
         .reset_index(name="count")
     )
     
-    # 4.1) Eliminación de outliers por hábitat (átomo de IQR)
     hab_counts = (
         hab_counts
         .groupby("habitat", group_keys=False)
@@ -739,7 +675,6 @@ def show_habitat_boxplot_page():
         ])
     )
     
-    # 5) Boxplot horizontal con Altair (sin outliers extremos)
     box = (
         alt.Chart(hab_counts)
         .mark_boxplot()
@@ -764,7 +699,7 @@ def show_habitat_boxplot_page():
         .configure_axisLeft(
             labelFontSize=14,
             titleFontSize=16,
-            labelLimit=300  # aumenta el espacio para etiquetas largas
+            labelLimit=300  
         )
     )
     st.altair_chart(box, use_container_width=True)
